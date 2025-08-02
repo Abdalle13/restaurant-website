@@ -16,11 +16,8 @@ A clean and responsive website for a Somali restaurant featuring menu, contact i
 ## 👨‍💻 Developed By
 [Abdalle]  
 [cabdale13yare@gmail.com]  
-[Your GitHub Profile]  
+[https://github.com/Abdalle13]  
 
-**Originally Built By**  
-[Original Developer's Name]  
-[Original Developer's Contact]  
 
 ## 🚀 Setup
 1. Download files
