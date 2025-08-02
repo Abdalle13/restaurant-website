@@ -222,7 +222,7 @@ body.dark .btn:hover {
   background-color: #ffbb33;
 }
 
-/* Dark mode toggle icon change */
+/* Dark mode toggle */
 body.dark #darkModeToggle i.fa-moon::before {
   content: "\f185"; /* Sun icon */
 }
@@ -326,11 +326,8 @@ body:not(.dark) #darkModeToggle i.fa-moon::before {
 
 }
 
-.about-image:hover img {
-  transform: scale(1.05);
-}
 
-/* ==== MENU SECTION ==== */
+
 .menu {
   padding: 100px 0;
   background-color: #f9f9f9;

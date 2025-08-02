@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   // Mobile nav toggle
   const menuToggle = document.querySelector('.menu-toggle');
   const navLinks = document.querySelector('.nav-links');
@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     menuToggle.classList.toggle('active');
   });
 
-  // Close mobile menu when clicking on a link
+  // Close menu when a link is clicked
   document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
       navLinks.classList.remove('active');
@@ -16,122 +16,108 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Smooth scroll with offset for fixed header
+  // Smooth scroll with offset
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener('click', function (e) {
       e.preventDefault();
-      
       const targetId = this.getAttribute('href');
-      const targetElement = document.querySelector(targetId);
-      
-      if (targetElement) {
-        const headerHeight = document.querySelector('header').offsetHeight;
-        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-        
+      const target = document.querySelector(targetId);
+      if (target) {
+        const headerOffset = document.querySelector('header').offsetHeight;
+        const offsetTop = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+
         window.scrollTo({
-          top: targetPosition,
+          top: offsetTop,
           behavior: 'smooth'
         });
       }
     });
   });
 
-  // Enhanced dark mode toggle with localStorage
+  // Dark mode toggle
   const toggleBtn = document.getElementById('darkModeToggle');
-  const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const savedTheme = localStorage.getItem('theme') || (prefersDark ? 'dark' : 'light');
 
-  // Check for saved user preference or system preference
-  const currentTheme = localStorage.getItem('theme') || 
-                      (prefersDarkScheme.matches ? 'dark' : 'light');
-
-  if (currentTheme === 'dark') {
+  if (savedTheme === 'dark') {
     document.body.classList.add('dark');
   }
 
   toggleBtn.addEventListener('click', () => {
     document.body.classList.toggle('dark');
-    const theme = document.body.classList.contains('dark') ? 'dark' : 'light';
-    localStorage.setItem('theme', theme);
+    const newTheme = document.body.classList.contains('dark') ? 'dark' : 'light';
+    localStorage.setItem('theme', newTheme);
   });
 
-  // Optimized scroll event for header
-  let lastScrollY = window.scrollY;
+  // Scroll shadow for header
   const header = document.querySelector('header');
-  const scrollThreshold = 5;
+  let lastScrollY = window.scrollY;
 
   window.addEventListener('scroll', () => {
-    // Only update if scroll position changed significantly
-    if (Math.abs(lastScrollY - window.scrollY) > scrollThreshold) {
-      lastScrollY = window.scrollY;
-      
-      // Add slight shadow when scrolled
-      if (lastScrollY > 10) {
-        header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-      } else {
-        header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-      }
+    const currentY = window.scrollY;
+    if (Math.abs(currentY - lastScrollY) > 5) {
+      lastScrollY = currentY;
+      header.style.boxShadow = currentY > 10
+        ? '0 2px 20px rgba(0, 0, 0, 0.1)'
+        : '0 2px 10px rgba(0, 0, 0, 0.1)';
     }
   }, { passive: true });
 
-  // Testimonial slider functionality
+  // Testimonial slider
   const testimonials = document.querySelectorAll('.testimonial');
   const dots = document.querySelectorAll('.slider-dot');
-  let currentTestimonial = 0;
-  let testimonialInterval;
+  let currentIndex = 0;
+  let testimonialTimer;
 
   function showTestimonial(index) {
-    testimonials.forEach(testimonial => testimonial.classList.remove('active'));
-    dots.forEach(dot => dot.classList.remove('active'));
-    
-    testimonials[index].classList.add('active');
-    dots[index].classList.add('active');
-    currentTestimonial = index;
+    testimonials.forEach((el, i) => {
+      el.classList.toggle('active', i === index);
+      dots[i].classList.toggle('active', i === index);
+    });
+    currentIndex = index;
   }
 
-  function startTestimonialSlider() {
-    testimonialInterval = setInterval(() => {
-      currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-      showTestimonial(currentTestimonial);
+  function startSlider() {
+    testimonialTimer = setInterval(() => {
+      const next = (currentIndex + 1) % testimonials.length;
+      showTestimonial(next);
     }, 5000);
   }
 
-  dots.forEach((dot, index) => {
+  dots.forEach((dot, i) => {
     dot.addEventListener('click', () => {
-      clearInterval(testimonialInterval);
-      showTestimonial(index);
-      startTestimonialSlider();
+      clearInterval(testimonialTimer);
+      showTestimonial(i);
+      startSlider();
     });
   });
 
-  // Start the slider
   showTestimonial(0);
-  startTestimonialSlider();
+  startSlider();
 
-  // Form submission handling
+  // Contact form handler
   const contactForm = document.getElementById('contactForm');
-  
   if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
-      
-      // Get form values
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const message = document.getElementById('message').value;
-      
-      // Here you would typically send the form data to a server
-      // For now, we'll just log it and show an alert
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (!name || !email || !message) {
+        alert('Please fill out all fields.');
+        return;
+      }
+
       console.log('Form submitted:', { name, email, message });
       alert('Thank you for your message! We will get back to you soon.');
-      
-      // Reset the form
       contactForm.reset();
     });
   }
 
-  // Update copyright year automatically
-  const yearElement = document.getElementById('currentYear');
-  if (yearElement) {
-    yearElement.textContent = new Date().getFullYear();
+  // Update copyright
+  const yearEl = document.getElementById('currentYear');
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
   }
 });
