@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pizza Bistro - Authentic Somali Cuisine</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="icon" href="/images/" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <div class="logo">
+            <a href="#"
+              ><i class="fas fa-utensils"></i> Pizza <span>Bistro</span></a
+            >
+          </div>
+          <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+
+            <button
+              id="darkModeToggle"
+              class="btn"
+              aria-label="Toggle dark mode"
+            >
+              <i class="fas fa-moon"></i>
+            </button>
+          </ul>
+
+          <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Experience Authentic Somali Cuisine</h1>
+          <p>
+            Discover the rich flavors and traditions of Somalia in every bite
+          </p>
+          <a href="#menu" class="btn">View Our Menu</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container">
+        <div class="section-title">
+          <h2>About Us</h2>
+        </div>
+        <div class="about-content">
+          <div class="about-text">
+            <h3>Our Story</h3>
+            <p>
+              Somali Bistro waxaa la aas aasay sanadkii 2010, waxaana
+              ujeedadeedu tahay iney dadka u soo bandhigto dhadhanka dhabta ah
+              ee cunnada Soomaaliyeed.
+            </p>
+            <p>
+              Cunto kariyaasheennu waxay isticmaalaan karis dhaqameedyo ay ka
+              dhaxleen awoowayaal, iyaga oo kaashanaya agab cusub oo nadiif ah
+              oo laga helo gudaha dalka.
+            </p>
+            <p>
+              Waxaan ku dadaalnaa in dadka noo yimaada ay helaan soo dhoweyn
+              diirran oo ay dareemaan sidii inay gurigooda joogaan. Ujeedadeennu
+              waa inaan bulshada barno kuna faano cuntooyinkeena dhaqanka ah.
+            </p>
+            <a href="#contact" class="btn">Visit Us</a>
+          </div>
+          <div class="about-image">
+            <img
+              src="/images/about.jpg"
+              alt="Somali Bistro Interior"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu" id="menu">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Menu</h2>
+        </div>
+        <div class="menu-items">
+          <div class="menu-item">
+            <img src="/images/rice.jpg" alt="Bariis iyo Hilib" loading="lazy" />
+            <div class="menu-item-content">
+              <h3>Bariis iyo Hilib</h3>
+              <p>
+                Bariis basmati udgoon oo lagu kariyey Hilib, sabiib, iyo xawaash
+                udgoon.
+              </p>
+              <div class="price">$5.99</div>
+            </div>
+          </div>
+          <div class="menu-item">
+            <img src="/images/canjeero.jpeg" alt="Canjeero" loading="lazy" />
+            <div class="menu-item-content">
+              <h3>Canjeero</h3>
+              <p>Canjeero dhaqameed, oo lagu daray malab.</p>
+              <div class="price">$1.5 (3 pieces)</div>
+            </div>
+          </div>
+          <div class="menu-item">
+            <img src="/images/sambusa.jpg" alt="Sambus" loading="lazy" />
+            <div class="menu-item-content">
+              <h3>Sambus</h3>
+              <p>Sanbuus oo ay ka buuxaan gudihisa hilib, basbaas,basal.</p>
+              <div class="price">$3 (3 pieces)</div>
+            </div>
+          </div>
+          <div class="menu-item">
+            <img
+              src="/images/mixed-pizza-with-various-ingridients.jpg"
+              alt="Muufo"
+              loading="lazy"
+            />
+            <div class="menu-item-content">
+              <h3>Pizza</h3>
+              <p>Pizza aad u macaan una dhamestiran wax walba.</p>
+              <div class="price">$10</div>
+            </div>
+          </div>
+          <div class="menu-item">
+            <img src="/images/cheeseburger.jpg" alt="Maraq" loading="lazy" />
+            <div class="menu-item-content">
+              <h3>Burger</h3>
+              <p>Cheeeseburger aad u macan oo leh khudaar, hilib, baradho.</p>
+              <div class="price">$4.99</div>
+            </div>
+          </div>
+          <div class="menu-item">
+            <img src="/images/Spaghetti.jpg" alt="Shaah" loading="lazy" />
+            <div class="menu-item-content">
+              <h3>pasto dhadher</h3>
+              <p>pasto dhadher aad u macaan badan una dhamestiran wax kasta.</p>
+              <div class="price">$3.99</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+      <div class="container">
+        <div class="section-title">
+          <h2>What Our Customers Say</h2>
+        </div>
+        <div class="testimonial-slider">
+          <div class="testimonial active">
+            <img
+              src="https://randomuser.me/api/portraits/women/44.jpg"
+              alt="Customer"
+              loading="lazy"
+            />
+            <p>
+              "The flavors at Somali Bistro take me back to my childhood in
+              Mogadishu. The bariis is perfectly seasoned and the hilib is
+              always tender. This is the most authentic Somali food I've had
+              outside of Somalia!"
+            </p>
+            <h4>Amina Hassan</h4>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          <div class="testimonial">
+            <img
+              src="https://randomuser.me/api/portraits/men/32.jpg"
+              alt="Customer"
+              loading="lazy"
+            />
+            <p>
+              "I was introduced to Somali cuisine for the first time at Somali
+              Bistro and now I'm hooked! The sambusas are incredible and the
+              service is warm and welcoming. Highly recommend the canjeero with
+              honey for breakfast."
+            </p>
+            <h4>David Johnson</h4>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+          <div class="testimonial">
+            <img
+              src="https://randomuser.me/api/portraits/women/68.jpg"
+              alt="Customer"
+              loading="lazy"
+            />
+            <p>
+              "As a vegetarian, I appreciate that Somali Bistro offers delicious
+              plant-based options. The vegetarian maraq is flavorful and
+              satisfying. The ambiance is lovely too - it feels like dining in
+              someone's home."
+            </p>
+            <h4>Sarah Williams</h4>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          <div class="slider-controls">
+            <div class="slider-dot active"></div>
+            <div class="slider-dot"></div>
+            <div class="slider-dot"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="section-title">
+          <h2>Contact Us</h2>
+        </div>
+        <div class="contact-container">
+          <div class="contact-info">
+            <h3>Visit Somali Bistro</h3>
+            <p>
+              We welcome you to experience our authentic Somali cuisine in a
+              warm and friendly atmosphere.
+            </p>
+            <div class="contact-details">
+              <div class="contact-detail">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>123 Degfer Road</span>
+              </div>
+              <div class="contact-detail">
+                <i class="fas fa-phone"></i>
+                <span>(+252) 0619157381</span>
+              </div>
+              <div class="contact-detail">
+                <i class="fas fa-envelope"></i>
+                <span>info@Pizzabistro.com</span>
+              </div>
+              <div class="contact-detail">
+                <i class="fas fa-clock"></i>
+                <span>Mon-Sun: 10:00 AM - 10:00 PM</span>
+              </div>
+            </div>
+            <h3>Follow Us</h3>
+            <div class="social-links">
+              <a href="https://www.facebook.com/wizz.cabdalea?mibextid=wwXIfr"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/zekovic__?igsh=cHdwMm93OGhwZ21o&utm_source=qr"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://wa.me/619157381?text=Hello%20Somali%20Bistro%2C%20I%20have%20a%20question..."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-whatsapp"></i>
+              </a>
+              <a
+                href="https://www.tiktok.com/@zekovic25?is_from_webapp=1&sender_device=pc"
+                ><i class="fab fa-tiktok"></i
+              ></a>
+            </div>
+          </div>
+          <div class="contact-form">
+            <h3>Send Us a Message</h3>
+            <form id="contactForm">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  required
+                  placeholder="e.g. John Doe"
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  required
+                  placeholder="e.g. example@email.com"
+                />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" placeholder="Your phone number" />
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  required
+                  placeholder="Type your message here..."
+                ></textarea>
+              </div>
+              <button type="submit" class="btn">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-container">
+          <div class="footer-col">
+            <h3>Pizza Bistro</h3>
+            <p>
+              Bringing the authentic taste of Somalia to your table since 2010.
+              Experience our rich culinary heritage in every bite.
+            </p>
+            <p>Family owned and operated with love and pride.</p>
+          </div>
+          <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#menu">Menu</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>Opening Hours</h3>
+            <p>Monday - Friday: 10:00 AM - 10:00 PM</p>
+            <p>Saturday - Sunday: 9:00 AM - 11:00 PM</p>
+            <p>We accept reservations for groups of 6 or more.</p>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>
+            &copy; <span id="currentYear"></span> Pizza Bistro. All Rights
+            Reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/js/index.js"></script>
+  </body>
+</html>
